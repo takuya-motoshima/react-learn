@@ -28,6 +28,19 @@
 1. Access "http://localhost:3001" from your browser; you should see the React screen.
     ![ReactApp-localhost.png](screencaps/ReactApp-localhost.png)
 
+## Enable hot reloading.
+1. Create an .env file and set the polling mode to true.
+    ```sh
+    echo "CHOKIDAR_USEPOLLING=true" > app/.env
+    ```
+1. Add polling mode to the environment variable in docker-compose.yml as well.
+    ```yml
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ```
+1. Restart the application.
+    docker exec -it react-learn sh -c "npm run restart"
+
 ## Docker command
 Rebuild.
 ```sh

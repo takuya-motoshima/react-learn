@@ -11,7 +11,7 @@ services:
     image: react-learn
     container_name: react-learn
     volumes:
-      - ./app:/usr/src/app
+      - ./app:/usr/src/app:delegated
       # - excluded_volume:/usr/src/app/node_modules
     command: sh -c "cd /usr/src/app && npm start"
     ports:
