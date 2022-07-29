@@ -1,0 +1,20 @@
+version: '3.9'
+# volumes:
+#   excluded_volume:
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    image: react-learn
+    container_name: react-learn
+    volumes:
+      - ./app:/usr/src/app
+      # - excluded_volume:/usr/src/app/node_modules
+    command: sh -c "cd /usr/src/app && npm start"
+    ports:
+      - "3001:3000"
+    tty: true
+    stdin_open: true
