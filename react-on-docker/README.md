@@ -1,7 +1,5 @@
-# Learn React on Docker
-
-## Documentation
-- [Docker command](DockerCommand.md)
+# React on Docker
+Run React apps in Docker.
 
 ## Composition
 ```text
@@ -26,28 +24,10 @@
     docker-compose up -d
     ```
 1. Access "http://localhost:3001" from your browser; you should see the React screen.
-    ![ReactApp-localhost.png](screencaps/ReactApp-localhost.png)
-
-## Enable hot reloading.
-1. Create an .env file and set the polling mode to true.
-    ```sh
-    echo "CHOKIDAR_USEPOLLING=true" > app/.env
-    ```
-1. Add polling mode to the environment variable in docker-compose.yml as well.
-    ```yml
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    ```
-1. Restart the application.
-    docker exec -it react-learn sh -c "npm run restart"
+    ![ReactApp-localhost.png](../screencaps/ReactApp-localhost.png)
 
 ## Docker command
-Rebuild.
-```sh
-docker-compose up -d --build
-```
-
-Service Log.
+Container logs.
 ```sh
 docker compose logs -f
 ```
@@ -57,7 +37,17 @@ Connect to container.
 docker exec -it react-learn sh
 ```
 
+Rebuild.
+```sh
+docker-compose up -d --build
+```
+
 Delete build cache.
 ```sh
 docker builder prune
+```
+
+Restart the application.
+```sh
+docker exec -it react-learn sh -c "npm run restart"
 ```

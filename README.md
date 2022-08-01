@@ -2,7 +2,10 @@
 This is the result of my learning React.
 
 ## Documentation
-- [Learn React on Docker](learn-react-on-docker)
+- [React on Docker](react-on-docker)
+- [Without Create React App](without-create-react-app)
+
+Added a sample react-app that does not use create-react-app.
 
 ## Author
 **Takuya Motoshima**
